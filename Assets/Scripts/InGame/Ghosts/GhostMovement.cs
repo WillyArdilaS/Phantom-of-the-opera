@@ -4,11 +4,14 @@ using UnityEngine;
 public class GhostMovement : MonoBehaviour
 {
     // === Movement ===
-    public enum ScreenSide { Left, Right }
-    [SerializeField] private ScreenSide screenSide;
+    public enum GhostDirection { Left, Right }
+    [SerializeField] private GhostDirection ghostDirection; 
     [SerializeField] private float speedMovement;
     private SpriteRenderer spriteRend;
     private Rigidbody2D rb2D;
+
+    // === Properties ===
+    public GhostDirection Direction => ghostDirection;
 
     void Awake()
     {
@@ -25,7 +28,7 @@ public class GhostMovement : MonoBehaviour
 
     private void InitializeGhost()
     {
-        if (screenSide == ScreenSide.Right)
+        if (ghostDirection == GhostDirection.Right)
         {
             spriteRend.flipX = true;
             speedMovement *= -1;

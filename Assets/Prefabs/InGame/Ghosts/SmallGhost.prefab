@@ -34,11 +34,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4756892822696457795, guid: 448bf242e94aad449b12de1fcfcaf20b, type: 3}
       propertyPath: horizontalSpacing
-      value: 4.5
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6566711878649737472, guid: 448bf242e94aad449b12de1fcfcaf20b, type: 3}
       propertyPath: m_Name
       value: SmallGhost
+      objectReference: {fileID: 0}
+    - target: {fileID: 6586710846262008509, guid: 448bf242e94aad449b12de1fcfcaf20b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8.55
       objectReference: {fileID: 0}
     - target: {fileID: 6586710846262008509, guid: 448bf242e94aad449b12de1fcfcaf20b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -54,7 +58,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8274880488156840184, guid: 448bf242e94aad449b12de1fcfcaf20b, type: 3}
       propertyPath: speedMovement
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
