@@ -41,15 +41,16 @@ public class PatternGenerator : MonoBehaviour
         /* 
             Formula for centering the entire pattern:
             totalWidth = (notesQuantity − 1) ∗ horizontalSpacing
-            startXPos = −totalWidth​ / 2 
+            startXPos = totalWidth​ / 2 
         */
-        float startXPos = -((notesQuantity - 1) * horizontalSpacing) / 2f;
+        int directionSign = ghostMovement.Direction == GhostMovement.GhostDirection.Right ? 1 : -1; // Mirror pattern horizontally depending on ghost direction
+        float startXPos = (((notesQuantity - 1) * horizontalSpacing) / 2f) * directionSign;
 
         for (int i = 0; i < notesQuantity; i++)
         {
             randomIndex = Random.Range(0, notePrefabs.Length);
 
-            float posX = startXPos + (i * horizontalSpacing); // Position of the first note + the required spacing
+            float posX = startXPos - (i * horizontalSpacing * directionSign);
             Vector3 finalPos = new(posX, verticalOffset, 0); // Local position relative to the father
 
             // Prefab instantiation

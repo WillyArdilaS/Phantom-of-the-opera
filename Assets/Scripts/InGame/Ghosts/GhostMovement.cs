@@ -28,7 +28,7 @@ public class GhostMovement : MonoBehaviour
 
     private void InitializeGhost()
     {
-        if (ghostDirection == GhostDirection.Right)
+        if (ghostDirection == GhostDirection.Left)
         {
             spriteRend.flipX = true;
             speedMovement *= -1;
