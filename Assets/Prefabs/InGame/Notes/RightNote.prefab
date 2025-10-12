@@ -16,6 +16,10 @@ PrefabInstance:
       propertyPath: orientation
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1265677238658204935, guid: 59fd6020a9189f84883ca6fc5571a9b6, type: 3}
+      propertyPath: noteDirection
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4626447915781430580, guid: 59fd6020a9189f84883ca6fc5571a9b6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

@@ -60,7 +60,7 @@ public class NoteManager : MonoBehaviour, IKeyMapping
         };
 
         // Select the dictionary according to the ghost direction 
-        var keyMap = ghostDirection == GhostMovement.GhostDirection.Left ? leftKeys : rightKeys;
+        var keyMap = ghostDirection == GhostMovement.GhostDirection.Right ? leftKeys : rightKeys;
 
         // Assign the corresponding key
         if(keyMap.TryGetValue(noteDirection, out IKeyMapping.Key mappedKey))

@@ -1,13 +1,15 @@
 using UnityEngine;
 
-public class NoteDetector : MonoBehaviour
+public abstract class AbstractNoteDetector : MonoBehaviour
 {
-    [SerializeField] private NoteManager activeNote;
+    [SerializeField] protected NoteManager activeNote;
+
+    protected abstract void CheckNoteInput();
 
     void OnTriggerEnter2D(Collider2D collision)
     {
         activeNote = collision.GetComponent<NoteManager>();
-        if (activeNote != null) activeNote.MarkAsHighlighted();
+        if (activeNote != null && activeNote.State == NoteManager.NoteState.Waiting) activeNote.MarkAsHighlighted();
     }
 
     void OnTriggerExit2D(Collider2D collision)

@@ -38,11 +38,11 @@ public class InputManager : MonoBehaviour
         // Process the input according to the corresponding map
         if (ctx.action.actionMap == leftMap)
         {
-            leftController.ProcessLeftInput(ctx);
+            leftController.ProcessInput(ctx);
         }
         else if (ctx.action.actionMap == rightMap)
         {
-            rightController.ProcessRightInput(ctx);
+            rightController.ProcessInput(ctx);
         }
     }
 }
