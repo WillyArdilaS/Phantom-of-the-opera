@@ -5,7 +5,7 @@ public class GhostMovement : MonoBehaviour
 {
     // === Movement ===
     public enum GhostDirection { Left, Right }
-    [SerializeField] private GhostDirection ghostDirection; 
+    [SerializeField] private GhostDirection ghostDirection;
     [SerializeField] private float speedMovement;
     private SpriteRenderer spriteRend;
     private Rigidbody2D rb2D;
@@ -17,7 +17,10 @@ public class GhostMovement : MonoBehaviour
     {
         rb2D = GetComponent<Rigidbody2D>();
         spriteRend = GetComponent<SpriteRenderer>();
+    }
 
+    void OnEnable()
+    {
         InitializeGhost();
     }
 
@@ -31,7 +34,12 @@ public class GhostMovement : MonoBehaviour
         if (ghostDirection == GhostDirection.Left)
         {
             spriteRend.flipX = true;
-            speedMovement *= -1;
+            if (speedMovement > 0) speedMovement *= -1;
+        }
+        else
+        {
+            spriteRend.flipX = false;
+            if (speedMovement < 0) speedMovement *= -1;
         }
     }
 }

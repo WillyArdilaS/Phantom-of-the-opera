@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -21,6 +22,9 @@ public class NoteManager : MonoBehaviour, IKeyMapping
     [SerializeField, Space(10)] private Sprite[] noteSprites;
     private Dictionary<NoteState, Sprite> spritesDictionary;
     private SpriteRenderer spriteRend;
+
+    // === Events ===
+    public event Action<NoteManager> OnNoteResolved; 
 
     // === Properties ===
     public IKeyMapping.Key RequiredKey { get => requiredKey; set => requiredKey = value; }
@@ -83,11 +87,13 @@ public class NoteManager : MonoBehaviour, IKeyMapping
     {
         spriteRend.sprite = spritesDictionary[NoteState.Successful];
         noteState = NoteState.Successful;
+        OnNoteResolved?.Invoke(this);
     }
 
     public void MarkAsFailed()
     {
         spriteRend.sprite = spritesDictionary[NoteState.Failed];
         noteState = NoteState.Failed;
+        OnNoteResolved?.Invoke(this);
     }
 }

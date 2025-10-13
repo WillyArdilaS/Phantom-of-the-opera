@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4843397300206793671}
   - component: {fileID: 8274880488156840184}
   - component: {fileID: 4756892822696457795}
+  - component: {fileID: -388982740572594245}
   m_Layer: 0
   m_Name: _BaseGhost
   m_TagString: Untagged
@@ -152,3 +153,16 @@ MonoBehaviour:
   - {fileID: 4323715852639819226, guid: c985974be45037147a4a12a9d36ff90b, type: 3}
   - {fileID: 3880527757130404591, guid: 57f60b8153a8f104793e162531387b1c, type: 3}
   notesList: []
+--- !u!114 &-388982740572594245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6566711878649737472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 159ed9caa04860a40bc0c6dcd14f9bba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  despawnCooldown: 0.5

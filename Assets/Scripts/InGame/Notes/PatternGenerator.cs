@@ -20,7 +20,10 @@ public class PatternGenerator : MonoBehaviour
     void Awake()
     {
         ghostMovement = GetComponent<GhostMovement>();
+    }
 
+    void OnEnable()
+    {
         CreateNotePattern();
     }
 
@@ -30,7 +33,7 @@ public class PatternGenerator : MonoBehaviour
         {
             if (note != null) Destroy(note);
         }
-        
+
         notesList.Clear();
     }
 
@@ -60,7 +63,7 @@ public class PatternGenerator : MonoBehaviour
             notesList.Add(noteCreated);
         }
     }
-    
+
     private void InitializeNote(GameObject noteCreated, Vector3 localPos)
     {
         NoteManager noteManager = noteCreated.GetComponent<NoteManager>();
