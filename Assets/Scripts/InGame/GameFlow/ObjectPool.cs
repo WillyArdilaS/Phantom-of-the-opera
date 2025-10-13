@@ -24,7 +24,7 @@ public class ObjectPool : MonoBehaviour
             pooledObjects.Add(newObj);
         }
     }
-    
+
     public GameObject GetObjectFromPool()
     {
         for (int i = 0; i < pooledObjects.Count; i++)

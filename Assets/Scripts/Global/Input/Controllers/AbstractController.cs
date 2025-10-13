@@ -14,16 +14,16 @@ public abstract class AbstractController : MonoBehaviour
     protected Coroutine resetKeyRoutine;
 
     // === Events ===
-    public event Action KeyPressed;
+    public event Action OnKeyPressed;
 
     // === Properties ===
-   public KeyState CurrentKey => keyState;
+    public KeyState CurrentKey => keyState;
 
     public abstract void ProcessInput(InputAction.CallbackContext ctx);
 
     protected void InvokeKeyEvent()
     {
-        KeyPressed?.Invoke();
+        OnKeyPressed?.Invoke();
     }
 
     protected IEnumerator ResetKeyState()

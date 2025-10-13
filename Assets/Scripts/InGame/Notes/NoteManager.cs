@@ -24,7 +24,7 @@ public class NoteManager : MonoBehaviour, IKeyMapping
     private SpriteRenderer spriteRend;
 
     // === Events ===
-    public event Action<NoteManager> OnNoteResolved; 
+    public event Action<NoteManager> OnNoteResolved;
 
     // === Properties ===
     public IKeyMapping.Key RequiredKey { get => requiredKey; set => requiredKey = value; }
@@ -67,10 +67,11 @@ public class NoteManager : MonoBehaviour, IKeyMapping
         var keyMap = ghostDirection == GhostMovement.GhostDirection.Right ? leftKeys : rightKeys;
 
         // Assign the corresponding key
-        if(keyMap.TryGetValue(noteDirection, out IKeyMapping.Key mappedKey))
+        if (keyMap.TryGetValue(noteDirection, out IKeyMapping.Key mappedKey))
         {
             requiredKey = mappedKey;
-        } else
+        }
+        else
         {
             requiredKey = IKeyMapping.Key.None;
         }

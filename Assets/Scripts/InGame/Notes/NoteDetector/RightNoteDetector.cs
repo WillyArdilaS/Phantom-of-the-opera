@@ -7,12 +7,12 @@ public class RightNoteDetector : AbstractNoteDetector
     void Awake()
     {
         rightController = GlobalGameManager.instance.InputManager.GetComponent<RightController>();
-        rightController.KeyPressed += CheckNoteInput;
+        rightController.OnKeyPressed += CheckNoteInput;
     }
 
     void OnDestroy()
     {
-        if (rightController != null) rightController.KeyPressed -= CheckNoteInput;
+        if (rightController != null) rightController.OnKeyPressed -= CheckNoteInput;
     }
 
     // === Overridden abstract methods ===

@@ -22,7 +22,7 @@ public class GhostDespawner : MonoBehaviour
 
     void OnEnable()
     {
-       if (pendingNotes.Count == 0) InitializePendingNotes();
+        if (pendingNotes.Count == 0) InitializePendingNotes();
     }
 
     void OnDisable()
