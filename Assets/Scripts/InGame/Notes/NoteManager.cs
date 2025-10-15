@@ -35,7 +35,8 @@ public class NoteManager : MonoBehaviour, IKeyMapping
     {
         spriteRend = GetComponent<SpriteRenderer>();
 
-        spritesDictionary = new(){
+        spritesDictionary = new() 
+        {
             {NoteState.Highlighted, noteSprites.FirstOrDefault(sprite => sprite.name == "HighlightedNote")},
             {NoteState.Successful, noteSprites.FirstOrDefault(sprite => sprite.name == "SuccessfulNote")},
             {NoteState.Failed, noteSprites.FirstOrDefault(sprite => sprite.name == "FailedNote")},

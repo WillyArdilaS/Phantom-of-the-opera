@@ -7,7 +7,7 @@ public class GhostDespawner : MonoBehaviour
 {
     // === Notes references ===
     private PatternGenerator patternGenerator;
-    private readonly List<NoteManager> pendingNotes = new();
+    [SerializeField] private List<NoteManager> pendingNotes = new();
 
     // === Despawn ===
     [SerializeField] private float despawnCooldown;
@@ -20,11 +20,6 @@ public class GhostDespawner : MonoBehaviour
         patternGenerator = GetComponent<PatternGenerator>();
     }
 
-    void OnEnable()
-    {
-        if (pendingNotes.Count == 0) InitializePendingNotes();
-    }
-
     void OnDisable()
     {
         foreach (var note in pendingNotes)
@@ -35,8 +30,10 @@ public class GhostDespawner : MonoBehaviour
         pendingNotes.Clear();
     }
 
-    private void InitializePendingNotes()
+    public void InitializePendingNotes()
     {
+        if (pendingNotes.Count != 0) return;
+
         for (int i = 0; i < patternGenerator.NotesList.Count; i++)
         {
             pendingNotes.Add(patternGenerator.NotesList[i].GetComponent<NoteManager>());

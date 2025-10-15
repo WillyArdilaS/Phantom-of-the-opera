@@ -19,18 +19,16 @@ public class GhostMovement : MonoBehaviour
         spriteRend = GetComponent<SpriteRenderer>();
     }
 
-    void OnEnable()
-    {
-        InitializeGhost();
-    }
-
     void FixedUpdate()
     {
         rb2D.linearVelocityX = speedMovement;
     }
 
-    private void InitializeGhost()
+    public void InitializeGhost(GhostDirection direction, float speed)
     {
+        ghostDirection = direction;
+        speedMovement = speed;
+
         if (ghostDirection == GhostDirection.Left)
         {
             spriteRend.flipX = true;

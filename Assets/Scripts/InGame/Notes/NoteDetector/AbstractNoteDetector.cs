@@ -3,7 +3,6 @@ using UnityEngine;
 public abstract class AbstractNoteDetector : MonoBehaviour
 {
     [SerializeField] protected NoteManager activeNote;
-
     protected abstract void CheckNoteInput();
 
     void OnTriggerEnter2D(Collider2D collision)

@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.17, y: 0.17, z: 1}
+  m_LocalScale: {x: 0.15, y: 0.15, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -144,8 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 508293c3d4ed1b04a8ffa5fb57750493, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  notesQuantity: 1
-  horizontalSpacing: 0
+  patternData: {fileID: 0}
   verticalOffset: 0
   notePrefabs:
   - {fileID: 2540396605837112898, guid: d93c258a65e3df2449c83fb6d394203e, type: 3}
@@ -165,4 +164,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 159ed9caa04860a40bc0c6dcd14f9bba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pendingNotes: []
   despawnCooldown: 0.5
