@@ -1200,7 +1200,18 @@ MonoBehaviour:
   spawners:
   - {fileID: 1072032494}
   - {fileID: 1968220016}
-  ghostSpawnEvents: []
+  ghostSpawnEvents:
+  - patternStartMin: 0
+    patternStartSec: 0
+    patternEndMin: 0
+    patternEndSec: 0
+    spawnHeight: 0
+    interactionZones: []
+    ghostSize: 0
+    ghostDirection: 0
+    patternData: {fileID: 0}
+    ghostPools: []
+    spawnTime: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
