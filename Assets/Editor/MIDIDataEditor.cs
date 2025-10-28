@@ -1,10 +1,10 @@
+using System.IO;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEditor;
 using UnityEngine;
 using Melanchall.DryWetMidi.Core;
 using Melanchall.DryWetMidi.Interaction;
-using System.IO;
-using System.Collections.Generic;
-using System.Linq;
 
 [CustomEditor(typeof(MIDIData))]
 public class MIDIDataEditor : Editor
@@ -146,7 +146,7 @@ public class MIDIDataEditor : Editor
                 for (int i = 0; i < previewCount; i++)
                 {
                     var note = channel.RawNotes[i];
-                    EditorGUILayout.LabelField($"[{i + 1}] {note.name}{note.octave} - Start:{note.startTime:F3}s - Duration:{note.duration:F3}s");
+                    EditorGUILayout.LabelField($"[{i + 1}] {note.Name} - Start:{note.StartTime:F3}s - Duration:{note.Duration:F3}s");
                 }
 
                 EditorGUI.indentLevel--;
@@ -186,14 +186,7 @@ public class MIDIDataEditor : Editor
             double durationSeconds = lengthMetric.Minutes * 60 + lengthMetric.Seconds + lengthMetric.Milliseconds / 1000.0;
 
             // Add the note to the corresponding channel
-            channelMap[channel].RawNotes.Add(new MIDINoteData
-            {
-                name = note.NoteName.ToString(),
-                octave = note.Octave,
-                startTime = startSeconds,
-                duration = durationSeconds,
-                channel = note.Channel
-            });
+            channelMap[channel].RawNotes.Add(new MIDINoteData(note.NoteName.ToString() + note.Octave.ToString(), note.Channel, startSeconds, durationSeconds));
         }
 
         // Save channels in ScriptableObject

@@ -32,12 +32,7 @@ public class PatternGenerator : MonoBehaviour
         notesList.Clear();
     }
 
-    public void InitializeNotePattern()
-    {
-        CreateNotePattern();
-    }
-
-    private void CreateNotePattern()
+    public void CreateNotePattern()
     {
         int randomIndex;
 

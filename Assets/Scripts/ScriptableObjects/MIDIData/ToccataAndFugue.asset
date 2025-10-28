@@ -89112,5 +89112,5 @@ MonoBehaviour:
         startTime: 443.078
         duration: 9.67
         channel: 1
-  defaultTimeWindow: 0
-  defaultPauseThreshold: 0.062
+  timeWindow: 0
+  pauseThreshold: 0

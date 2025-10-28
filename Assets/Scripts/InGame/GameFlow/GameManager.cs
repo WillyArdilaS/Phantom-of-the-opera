@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -14,16 +13,19 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameState gameState = GameState.Playing;
 
     // === Game start ===
-    [SerializeField, Tooltip("Delay time in seconds")] private float startDelay;
-    [SerializeField] private AudioSource audioSource;
+    [SerializeField, Tooltip("Delay time in seconds. It must be greater than the absolute value of the smallest spawnTime")] private float startDelay;
+    private float globalTime;
 
-    // === Coroutines ===
-    private Coroutine startGameRoutine;
+    // === Audio ===
+    [SerializeField] private AudioSource audioSource;
+    private bool audioStarted = false;
 
     // === Properties ===
     public GameObject SpawnManager => spawnManager;
     public GameState State { get => gameState; set => gameState = value; }
     public AudioSource Audio => audioSource;
+    public float StartDelay => startDelay;
+    public float GlobalTime => globalTime;
 
     void Awake()
     {
@@ -31,9 +33,6 @@ public class GameManager : MonoBehaviour
         {
             instance = this;
             InitializeManagers();
-
-            if (startGameRoutine != null) StopCoroutine(StartGame());
-            startGameRoutine = StartCoroutine(StartGame());
         }
         else
         {
@@ -43,7 +42,15 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (gameState == GameState.Playing && audioSource.time == audioSource.clip.length)
+        globalTime += Time.deltaTime;
+
+        if (!audioStarted && globalTime >= startDelay)
+        {
+            audioSource.Play();
+            audioStarted = true;
+        }
+
+        if (audioStarted && gameState == GameState.Playing && audioSource.time >= audioSource.clip.length)
         {
             OnLevelEnd();
         }
@@ -52,12 +59,6 @@ public class GameManager : MonoBehaviour
     private void InitializeManagers()
     {
         if (spawnManager == null) spawnManager = transform.GetChild(0).gameObject;
-    }
-
-    private IEnumerator StartGame()
-    {
-        yield return new WaitForSeconds(startDelay);
-        if (audioSource != null) audioSource.Play();
     }
 
     private void OnLevelEnd()

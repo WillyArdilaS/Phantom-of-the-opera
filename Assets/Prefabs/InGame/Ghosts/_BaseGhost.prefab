@@ -165,4 +165,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pendingNotes: []
-  despawnCooldown: 0.5
+  despawnCooldown: 0.3

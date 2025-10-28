@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &899621004044361619
+--- !u!1 &8069530156832387549
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,8 +8,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2197416454521510994}
-  - component: {fileID: 1661471886099945813}
+  - component: {fileID: 262214036559878940}
+  - component: {fileID: 7125881131103741882}
   m_Layer: 0
   m_Name: SmallGhostPool
   m_TagString: Untagged
@@ -17,13 +17,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2197416454521510994
+--- !u!4 &262214036559878940
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 899621004044361619}
+  m_GameObject: {fileID: 8069530156832387549}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -32,17 +32,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1661471886099945813
+--- !u!114 &7125881131103741882
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 899621004044361619}
+  m_GameObject: {fileID: 8069530156832387549}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c813a67ed180eff46b73fdb9c9ff0a07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultPoolSize: 5
+  defaultPoolSize: 10
   objectPrefab: {fileID: 3766747884980587909, guid: 89597efbdca8278489e13851cab15529, type: 3}
