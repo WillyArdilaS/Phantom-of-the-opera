@@ -1,8 +1,11 @@
+using UnityEditor.Animations;
 using UnityEngine;
 
 public abstract class AbstractNoteDetector : MonoBehaviour
 {
     [SerializeField] protected NoteManager activeNote;
+    protected Animator detectorAnimator;
+
     protected abstract void CheckNoteInput();
 
     void OnTriggerEnter2D(Collider2D collision)

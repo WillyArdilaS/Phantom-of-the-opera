@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-[RequireComponent(typeof(SpriteRenderer))]
+[RequireComponent(typeof(SpriteRenderer), typeof(Animator))]
 public class NoteManager : MonoBehaviour, IKeyMapping
 {
     // === Key Mapping ===
@@ -22,6 +22,7 @@ public class NoteManager : MonoBehaviour, IKeyMapping
     [SerializeField, Space(10)] private Sprite[] noteSprites;
     private Dictionary<NoteState, Sprite> spritesDictionary;
     private SpriteRenderer spriteRend;
+    private Animator noteAnimator;
 
     // === Events ===
     public event Action<NoteManager> OnNoteResolved;
@@ -30,10 +31,12 @@ public class NoteManager : MonoBehaviour, IKeyMapping
     public IKeyMapping.Key RequiredKey { get => requiredKey; set => requiredKey = value; }
     public NoteDirection Direction => noteDirection;
     public NoteState State => noteState;
+    public Animator NoteAnimator => noteAnimator;
 
     void Awake()
     {
         spriteRend = GetComponent<SpriteRenderer>();
+        noteAnimator = GetComponent<Animator>();
 
         spritesDictionary = new() 
         {

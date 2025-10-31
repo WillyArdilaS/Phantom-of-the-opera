@@ -147,6 +147,7 @@ public class SpawnManagerEditor : Editor
         return pattern;
     }
 
+    // * MUST CHECK THIS FORMULA BECAUSE GHOSTS ARE VERY FAST, BUT I DON'T KNOW IF IT'S BECAUSE OF THE FORMULA OR THE GROUPING OF NOTES *
     private float CalculateSpeed(SerializedProperty ghost, PatternData patternData)
     {
         float patternStartTime = ghost.FindPropertyRelative("patternStartTime").floatValue;

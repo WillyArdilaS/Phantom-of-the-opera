@@ -1,11 +1,13 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
 public class RightNoteDetector : AbstractNoteDetector
 {
     private RightController rightController;
 
     void Awake()
     {
+        detectorAnimator = GetComponent<Animator>();
         rightController = GlobalGameManager.instance.InputManager.GetComponent<RightController>();
         rightController.OnKeyPressed += CheckNoteInput;
     }
@@ -30,6 +32,9 @@ public class RightNoteDetector : AbstractNoteDetector
             {
                 activeNote.MarkAsFailed();
             }
+
+            activeNote.NoteAnimator.SetTrigger("t_isPlaying");
+            detectorAnimator.SetTrigger("t_isPlaying");
         }
     }
 }

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4626447915781430580}
   - component: {fileID: 6165545486266451668}
   - component: {fileID: 4361023147723675334}
+  - component: {fileID: 6395535819954542344}
   - component: {fileID: 1265677238658204935}
   m_Layer: 0
   m_Name: _BaseNote
@@ -135,6 +136,28 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 10.56, y: 12.03}
   m_EdgeRadius: 0
+--- !u!95 &6395535819954542344
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 804495050473387158}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: af48e645cdcb4c74ab9a24ae0a195d6a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &1265677238658204935
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,8 +170,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8f6793fa7d572047ad63c88f128323e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  noteDirection: 0
+  requiredKey: 0
   damage: 0
-  state: 0
+  noteState: 0
   noteSprites:
   - {fileID: 21300000, guid: 1c8da649995d665419a70b9672e43b8d, type: 3}
   - {fileID: 21300000, guid: 1d820dafc94cc5f4281052cfacd1a3f4, type: 3}
